@@ -1,0 +1,45 @@
+import axios from "axios";
+import { base_client_url } from "../../utils/base_url";
+import { config } from "../../utils/axiosconfig";
+
+export const addMainTeam = async(teamData) => {
+    const response = await axios.post(`${base_client_url}/team/`, teamData,config);
+    return response.data;
+};
+
+export const allMainTeam = async() => {
+    const response = await axios.get(`${base_client_url}/team/all`);
+    return response.data;
+};
+
+export const singleMainTeam = async(id) => {
+    const response = await axios.get(`${base_client_url}/team/single/${id}`);
+    return response.data;
+};
+
+export const putMainTeam = async(team) => {
+    const response = await axios.put(`${base_client_url}/team/update/${team.id}`, 
+    {
+        name : team.teamData.name,
+        images : team.teamData.images,
+        position: team.teamData.positiion
+    },
+    config);
+    return response.data;
+};
+
+export const deleteMainTeam = async(id) => {
+    const response = await axios.delete(`${base_client_url}/team/delete/${id}`,config);
+    return response.data;
+};
+
+
+const ourTeamService = {
+    addMainTeam,
+    allMainTeam,
+    singleMainTeam,
+    putMainTeam,
+    deleteMainTeam
+}
+
+export default ourTeamService;

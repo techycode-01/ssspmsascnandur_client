@@ -1,0 +1,56 @@
+@import "tailwindcss";
+
+@keyframes shine {
+  0% {
+    transform: translateX(-100%) rotate(15deg);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100%) rotate(15deg);
+    opacity: 0;
+  }
+}
+
+.animate-shine {
+  animation: shine 2.5s infinite;
+}/* Swi
+per Carousel Styles for Program Images */
+.swiper-button-next,
+.swiper-button-prev {
+  color: #f97316 !important;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 50%;
+  width: 40px !important;
+  height: 40px !important;
+  margin-top: -20px !important;
+}
+
+.swiper-button-next:after,
+.swiper-button-prev:after {
+  font-size: 16px !important;
+  font-weight: bold;
+}
+
+.swiper-pagination-bullet {
+  background: rgba(255, 255, 255, 0.7) !important;
+  opacity: 1 !important;
+}
+
+.swiper-pagination-bullet-active {
+  background: #f97316 !important;
+}
+
+.swiper-pagination {
+  bottom: 10px !important;
+}
+
+/* Hover effects for navigation buttons */
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  background: rgba(255, 255, 255, 1);
+  transform: scale(1.1);
+  transition: all 0.3s ease;
+}
