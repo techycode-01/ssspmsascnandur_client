@@ -8,7 +8,14 @@ import { useDispatch, useSelector } from "react-redux";
 
 const navLinks = [
   { name: "Home", path: "/" },
-  { name: "About", path: "/about-us" },
+  {
+    name: "About",
+    // path: "/about-us",
+    dropdown: [
+      { name: "About Us", path: "/about-us" },
+      { name: "Faculty And Staff", path: "/faculty-and-staff" },
+    ],
+  },
   { name: "Courses", path: "/course" },
   {
     name: "Academics",

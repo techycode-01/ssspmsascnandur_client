@@ -23,6 +23,7 @@ import AcademicCalendar from "./pages/Academics/AcademicCalendar";
 import Facilities from "./pages/Academics/Facilities";
 import AcademicTimeTable from "./pages/Academics/AcademicTimeTable";
 import Iqac from "./pages/Academics/Iqac";
+import FacultyAndStaff from "./pages/about/FacultyAndStaff";
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="/about-us" element={<About />} />
+          <Route path="/faculty-and-staff" element={<FacultyAndStaff />} />
           {/* <Route path='/causes' element={<Causes />} /> */}
           <Route path="/program" element={<Program />} />
           <Route path="/read-prog/:id" element={<ReadEvent />} />
@@ -44,7 +46,6 @@ function App() {
           <Route path="/time-table" element={<AcademicTimeTable />} />
           <Route path="/facilities" element={<Facilities />} />
           <Route path="/iqac" element={<Iqac />} />
-
 
           <Route path="/our-blog" element={<Blog />} />
           <Route path="/read-blog/:id" element={<ReadBlog />} />
