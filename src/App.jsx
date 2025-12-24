@@ -24,6 +24,7 @@ import Facilities from "./pages/Academics/Facilities";
 import AcademicTimeTable from "./pages/Academics/AcademicTimeTable";
 import Iqac from "./pages/Academics/Iqac";
 import FacultyAndStaff from "./pages/about/FacultyAndStaff";
+import FacultyProfile from "./pages/about/FacultyProfile";
 
 function App() {
   return (
@@ -35,6 +36,7 @@ function App() {
           <Route index element={<Home />} />
           <Route path="/about-us" element={<About />} />
           <Route path="/faculty-and-staff" element={<FacultyAndStaff />} />
+          <Route path="/faculty-profile/:id" element={<FacultyProfile />} />
           {/* <Route path='/causes' element={<Causes />} /> */}
           <Route path="/program" element={<Program />} />
           <Route path="/read-prog/:id" element={<ReadEvent />} />

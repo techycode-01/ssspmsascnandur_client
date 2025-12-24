@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
 import Aboutban from "../../components/otherBanners/Aboutban";
 
 const FacultyAndStaff = () => {
@@ -6,7 +7,7 @@ const FacultyAndStaff = () => {
     window.scrollTo(0, 0);
   }, []);
 
-  /* ===================== DATA (UNCHANGED) ===================== */
+  /* ===================== DATA ===================== */
 
   const managementCommittee = [
     { sn: 1, name: "Smt. Bangar R. B.", designation: "President" },
@@ -40,163 +41,163 @@ const FacultyAndStaff = () => {
 
   const staff = [
     {
+      id: "dr-munde-ss",
       sn: 1,
       name: "Dr. Munde S. S.",
       designation: "Principal",
       department: "Marathi",
       mobile: "7721961117",
       subject: "Marathi",
-      profile: "View",
     },
     {
+      id: "dr-jadhav-bk",
       sn: 2,
       name: "Dr. Jadhav B. K.",
       designation: "Professor",
       department: "Marathi",
       mobile: "9423758123",
       subject: "Marathi",
-      profile: "View",
     },
     {
+      id: "dr-saruk-cu",
       sn: 3,
       name: "Dr. Saruk C. U.",
       designation: "Associate Professor",
       department: "Physical Director",
       mobile: "9765518395",
       subject: "Physical Director",
-      profile: "View",
     },
     {
+      id: "dr-gite-lb",
       sn: 4,
       name: "Dr. Gite L. B.",
       designation: "Professor",
       department: "Marathi",
       mobile: "9421560484",
       subject: "Marathi",
-      profile: "View",
     },
     {
+      id: "prof-gite-ds",
       sn: 5,
       name: "Prof. Gite D. S.",
       designation: "Professor",
       department: "Marathi",
       mobile: "9764183939",
       subject: "Marathi",
-      profile: "View",
     },
     {
+      id: "dr-khade-vb",
       sn: 6,
       name: "Dr. Khade V. B.",
       designation: "Associate Professor",
       department: "Hindi",
       mobile: "9405784135",
       subject: "Hindi",
-      profile: "View",
     },
     {
+      id: "dr-nagargoje-sl",
       sn: 7,
       name: "Dr. Nagargoje S. L.",
       designation: "Associate Professor",
       department: "History",
       mobile: "9764589277",
       subject: "History",
-      profile: "View",
     },
     {
+      id: "dr-munde-sm",
       sn: 8,
       name: "Dr. Munde S. M.",
       designation: "Professor",
-      department: "Poli. Science",
-      mobile: "94226063576",
-      subject: "Poli. Sci.",
-      profile: "View",
+      department: "Political Science",
+      mobile: "9422606357",
+      subject: "Political Science",
     },
     {
+      id: "dr-tandale-ss",
       sn: 9,
       name: "Dr. Tandale S. S.",
       designation: "Assistant Professor",
       department: "Sociology",
       mobile: "9763813942",
       subject: "Sociology",
-      profile: "View",
     },
     {
+      id: "dr-sawargaonkar-sl",
       sn: 10,
       name: "Dr. Sawargaonkar S. L.",
       designation: "Professor",
       department: "Economics",
       mobile: "7588634005",
       subject: "Economics",
-      profile: "View",
     },
     {
+      id: "dr-hange-ss",
       sn: 11,
       name: "Dr. Hange S. S.",
       designation: "Professor",
-      department: "Pub. Admin",
+      department: "Public Administration",
       mobile: "9851134135",
-      subject: "Pub. Admin.",
-      profile: "View",
+      subject: "Public Administration",
     },
     {
+      id: "dr-watore-sm",
       sn: 12,
       name: "Dr. Watore S. M.",
       designation: "Professor",
       department: "Psychology",
       mobile: "7588586854",
       subject: "Psychology",
-      profile: "View",
     },
     {
+      id: "dr-sirsat-rb",
       sn: 13,
       name: "Dr. Sirsat R. B.",
       designation: "Professor",
       department: "Psychology",
       mobile: "9423157757",
       subject: "Psychology",
-      profile: "View",
     },
     {
+      id: "dr-ghodke-jv",
       sn: 14,
       name: "Dr. Ghodke J. V.",
       designation: "Professor",
       department: "Geography",
       mobile: "9860476246",
       subject: "Geography",
-      profile: "View",
     },
     {
+      id: "dr-wagh-ap",
       sn: 15,
       name: "Dr. Wagh A. P.",
       designation: "Associate Professor",
       department: "Geography",
       mobile: "9763545042",
       subject: "Geography",
-      profile: "View",
     },
     {
+      id: "dr-latpate-rr",
       sn: 16,
       name: "Dr. Latpate R. R.",
       designation: "Associate Professor",
-      department: "Librarian",
+      department: "Library",
       mobile: "9823611726",
       subject: "Librarian",
-      profile: "View",
     },
     {
+      id: "dr-kamble-sr",
       sn: 17,
       name: "Dr. Kamble S. R.",
       designation: "Assistant Professor",
       department: "English",
       mobile: "7875910615",
       subject: "English",
-      profile: "View",
     },
   ];
 
-  /* ===================== TABLE ===================== */
+  /* ===================== TABLE COMPONENT ===================== */
 
-  const SimpleTable = ({ title, columns, data }) => (
+  const SimpleTable = ({ title, columns, data, isProfileTable }) => (
     <div className="mb-10">
       <h3 className="text-xl font-bold text-black mb-2 border-b border-gray-400">
         {title}
@@ -216,20 +217,32 @@ const FacultyAndStaff = () => {
               ))}
             </tr>
           </thead>
+
           <tbody>
             {data.map((row, idx) => (
               <tr
                 key={idx}
                 className="bg-[#f5f5f5] border-b border-dashed border-gray-400"
               >
-                {Object.values(row).map((val, i) => (
-                  <td
-                    key={i}
-                    className="px-3 py-2 border-r border-dashed border-gray-400"
-                  >
-                    {val}
-                  </td>
-                ))}
+                <td className="px-3 py-2">{row.sn}</td>
+                <td className="px-3 py-2">{row.name}</td>
+                <td className="px-3 py-2">{row.designation}</td>
+
+                {isProfileTable ? (
+                  <>
+                    <td className="px-3 py-2">{row.department}</td>
+                    <td className="px-3 py-2">{row.mobile}</td>
+                    <td className="px-3 py-2">{row.subject}</td>
+                    <td className="px-3 py-2">
+                      <Link
+                        to={`/faculty-profile/${row.id}`}
+                        className="text-blue-700 font-semibold hover:underline"
+                      >
+                        View
+                      </Link>
+                    </td>
+                  </>
+                ) : null}
               </tr>
             ))}
           </tbody>
@@ -245,14 +258,12 @@ const FacultyAndStaff = () => {
       <Aboutban />
 
       <section className="bg-white min-h-screen">
-        {/* HEADING BACKGROUND STRIP */}
         <div className="w-full bg-gray-100 border-b border-gray-300 px-4 py-3">
           <h2 className="text-3xl font-bold text-[#370617] text-center">
             Faculty And Staff
           </h2>
         </div>
 
-        {/* CONTENT */}
         <div className="w-full px-2 md:px-4 lg:px-6 py-6">
           <SimpleTable
             title="Management Committee"
@@ -278,6 +289,7 @@ const FacultyAndStaff = () => {
               "Profile",
             ]}
             data={staff}
+            isProfileTable
           />
         </div>
       </section>

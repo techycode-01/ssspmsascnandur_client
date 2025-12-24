@@ -18,6 +18,7 @@ import TeamSlider from "../../components/team/TeamSlider";
 import WeDo from "../../components/weDo/WeDo";
 import AnnualReports from "../../components/annualReports/AnnualReports";
 import ImpactStories from "../../components/impactStories/ImpactStories";
+import principalImage from "../../assets/facultystaff/principal.webp";
 
 const About = () => {
   useEffect(() => {
@@ -198,7 +199,7 @@ const About = () => {
             {/* Photo inside container (top-left) */}
             <div className="w-full lg:w-[450px] xl:w-[520px] 2xl:w-[620px] shrink-0">
               <img
-                src="/src/assets/principal.jpg" // 🔁 update path if needed
+                src={principalImage} // 🔁 update path if needed
                 alt="Principal"
                 className="rounded-xl w-full object-cover shadow-md"
               />
