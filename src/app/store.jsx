@@ -9,6 +9,8 @@ import phoneReducer from "../features/phone/phoneSlice";
 import emailReducer from "../features/emails/emailSlice";
 import programmeReducer from "../features/programme/programmeSlice";
 
+import managementCommitteeReducer from "../features/FacultyAndStaff/managementCommitteeSlice";
+import collegeDevelopmentCommitteeReducer from "../features/FacultyAndStaff/collegeDevelopmentCommitteeSlice";
 import teachingStaffReducer from "../features/FacultyAndStaff/teachingStaffSlice";
 
 import ourTeamReducer from "../features/ourTeam/ourTeamSlice";
@@ -33,6 +35,8 @@ export const store = configureStore({
     email: emailReducer,
     programme: programmeReducer,
 
+    managementCommittee: managementCommitteeReducer,
+    collegeDevelopmentCommittee: collegeDevelopmentCommitteeReducer,
     teachingStaff: teachingStaffReducer,
 
     ourTeam: ourTeamReducer,

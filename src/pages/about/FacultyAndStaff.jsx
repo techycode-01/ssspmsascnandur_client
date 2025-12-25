@@ -1,4 +1,4 @@
-/* ===================== DATA ===================== */
+/* ===================== Static DATA ===================== */
 
 // const managementCommittee = [
 //   { sn: 1, name: "Smt. Bangar R. B.", designation: "President" },
@@ -187,14 +187,19 @@
 // ];
 
 /* ===================== COMPONENTS ===================== */
+/* ===================== COMPONENTS ===================== */
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import Aboutban from "../../components/otherBanners/Aboutban";
+
 import {
   getTeachingStaff,
   resetState,
 } from "../../features/FacultyAndStaff/teachingStaffSlice";
+
+import { getManagementCommittee } from "../../features/FacultyAndStaff/managementCommitteeSlice";
+import { getCollegeDevelopmentCommittee } from "../../features/FacultyAndStaff/collegeDevelopmentCommitteeSlice";
 
 const FacultyAndStaff = () => {
   const dispatch = useDispatch();
@@ -203,45 +208,24 @@ const FacultyAndStaff = () => {
     window.scrollTo(0, 0);
     dispatch(resetState());
     dispatch(getTeachingStaff());
+    dispatch(getManagementCommittee());
+    dispatch(getCollegeDevelopmentCommittee());
   }, [dispatch]);
 
-  /* ===================== STATIC DATA ===================== */
 
-  const managementCommittee = [
-    { sn: 1, name: "Smt. Bangar R. B.", designation: "President" },
-    { sn: 2, name: "Hon’ble Santosh Sawargaonkar", designation: "Secretary" },
-    {
-      sn: 3,
-      name: "Smt. Vaijanta Laxmanrao Misal",
-      designation: "Joint-Secretary",
-    },
-    {
-      sn: 4,
-      name: "Prof. (Dr.) Shankarrao Laxmanrao Sawargaonkar",
-      designation: "Treasurer",
-    },
-    { sn: 5, name: "Smt. Rahibai Ashruba Waybase", designation: "Member" },
-  ];
-
-  const cdc = [
-    { sn: 1, name: "Hon’ble Santosh Sawargaonkar", designation: "Secretary" },
-    { sn: 2, name: "Dr. Sirsat R. B.", designation: "Member" },
-    { sn: 3, name: "Dr. Saruk C. U.", designation: "Member" },
-    { sn: 4, name: "Dr. Jadhav B. K.", designation: "Member" },
-    { sn: 5, name: "Dr. Watore S. M.", designation: "Member" },
-    { sn: 6, name: "Smt. Patil S. V.", designation: "Member" },
-    { sn: 7, name: "Smt. Bangar R. B.", designation: "Member" },
-    { sn: 8, name: "Prof. Shankar Sawargaonkar", designation: "Member" },
-    { sn: 9, name: "Yuvraj Ramrao Jadhav", designation: "Member" },
-    { sn: 10, name: "Dr. Kamble S. R.", designation: "Member" },
-    { sn: 11, name: "Dr. Munde S. S.", designation: "Member Secretary" },
-  ];
-
-
-  /* ===================== API STAFF ===================== */
+  /* ===================== API DATA ===================== */
 
   const staffState =
     useSelector((state) => state?.teachingStaff?.teachingStaff) || [];
+
+  const managementCommittee =
+    useSelector((state) => state?.managementCommittee?.managementCommittee) ||
+    [];
+
+  const cdc =
+    useSelector(
+      (state) => state?.collegeDevelopmentCommittee?.collegeDevelopmentCommittee
+    ) || [];
 
   /* ===================== TABLE COMPONENT ===================== */
 
