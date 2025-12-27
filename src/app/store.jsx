@@ -13,6 +13,11 @@ import managementCommitteeReducer from "../features/FacultyAndStaff/managementCo
 import collegeDevelopmentCommitteeReducer from "../features/FacultyAndStaff/collegeDevelopmentCommitteeSlice";
 import teachingStaffReducer from "../features/FacultyAndStaff/teachingStaffSlice";
 
+//Academics
+import syllabusReducer from "../features/Academics/syllabusSlice";
+import academicCalendarReducer from "../features/Academics/academicCalendarSlice";
+import academicTimeTableReducer from "../features/Academics/academicTimeTableSlice";
+
 import ourTeamReducer from "../features/ourTeam/ourTeamSlice";
 import galleryReducer from "../features/gallery/gallerySlice";
 import socMediaReducer from "../features/socialMedia/socialSlice";
@@ -39,6 +44,9 @@ export const store = configureStore({
     collegeDevelopmentCommittee: collegeDevelopmentCommitteeReducer,
     teachingStaff: teachingStaffReducer,
 
+    syllabus: syllabusReducer,
+    academicCalendar: academicCalendarReducer,
+    academicTimeTable: academicTimeTableReducer,
     ourTeam: ourTeamReducer,
     gallery: galleryReducer,
     socMedia: socMediaReducer,
